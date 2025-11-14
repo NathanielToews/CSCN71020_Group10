@@ -22,3 +22,9 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 
 	return result;
 }
+
+char* triangleAngles(int side1, int side2, int side3) {
+
+
+	return "a";
+}
