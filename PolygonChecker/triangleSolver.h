@@ -1,3 +1,3 @@
 #pragma once
-char* analyzeTriangle(int side1, int side2, int side3);
-char* triangleAngles(int side1, int side2, int side3);
+char* analyzeTriangle(double a, double b, double c);
+void triangleAngles(double a, double b, double c);

@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 #include "triangleSolver.h"
 
-char* analyzeTriangle(int side1, int side2, int side3) {
+char* analyzeTriangle(double a, double b, double c) {
 	char* result = "";
-	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+	if (a <= 0 || b <= 0 || c <= 0) {
 		result = "Not a triangle";
 	}
-	else if (side1 == side2 && side1 == side3) {
+	else if (a == b && a == c) {
 		result = "Equilateral triangle";
 	}
-	else if ((side1 == side2 && side1 != side3) || 
-		(side1 == side3 && side1 != side2))
+	else if ((a == b && a != c) || 
+		(a == c && a != b) ||
+		(b == c && b != a))
 	{
 		result = "Isosceles triangle";
 	}
@@ -23,8 +27,22 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	return result;
 }
 
-char* triangleAngles(int side1, int side2, int side3) {
+void triangleAngles(double a, double b, double c) {
+	double angleStore[3];
+
+    double A = acos((b * b + c * c - a * a) / (2.0 * b * c));
+    double B = acos((a * a + c * c - b * b) / (2.0 * a * c));
+    double C = acos((a * a + b * b - c * c) / (2.0 * a * b));
+
+    A = A * (180.0 / M_PI);
+    B = B * (180.0 / M_PI);
+    C = C * (180.0 / M_PI);
+
+	angleStore[0] = A;
+	angleStore[1] = B;
+	angleStore[2] = C;
+
+	printf("Your angles are: %.2f°, %.2f°, and %.2f°\n", angleStore[0], angleStore[1], angleStore[2]);
 
 
-	return "a";
 }
