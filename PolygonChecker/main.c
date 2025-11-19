@@ -23,6 +23,19 @@ int main() {
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 			break;
+
+		case 2:
+			printf_s("Rectangle selected.\n");
+			int rectangleSides[4] = { 0, 0, 0, 0 };
+			int* rectangleSidePtr = getrectangleSides(rectangleSides);
+
+			//Check names of parameter
+			char* resultRec = analyzeTriangle(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
+			printf("%s\n", resultRec);
+			break;
+
+
+
 		case 0:
 			continueProgram = false;
 			break;
@@ -44,6 +57,7 @@ void printWelcome() {
 
 int printShapeMenu() {
 	printf_s("1. Triangle\n");
+	printf_s("2. Rectangle\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
@@ -61,4 +75,13 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+
+int* getrectangleSides(int* rectangleSides) {
+	printf_s("Enter the four sides of the rectangle: ");
+	for (int i = 0; i < 4; i++)
+	{
+		scanf_s("%d", &rectangleSides[i]);
+	}
+	return rectangleSides;
 }
