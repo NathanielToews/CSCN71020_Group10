@@ -15,8 +15,7 @@ char* analyzeTriangle(double a, double b, double c) {
 		result = "Equilateral triangle";
 	}
 	else if ((a == b && a != c) || 
-		(a == c && a != b) ||
-		(b == c && b != a))
+		(a == c && a != b) || (b == c && b != a))
 	{
 		result = "Isosceles triangle";
 	}
