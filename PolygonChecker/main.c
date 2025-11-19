@@ -50,6 +50,7 @@ int printShapeMenu() {
 
 	printf_s("Enter number: ");
 	scanf_s("%1o", &shapeChoice);
+	
 
 	return shapeChoice;
 }
