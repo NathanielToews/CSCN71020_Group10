@@ -76,8 +76,20 @@ int* getTriangleSides(int* triangleSides) {
 }
 
 void getrectangleSides(Point points[4]) {
+
+	bool recSidesValid = true;
 	for (int i = 0; i < 4; i++) {
-		printf_s("Please enter the points you want 1 at a time, in this format(x y):\n");
-		scanf_s("%d %d", &points[i].x, &points[i].y);
+		while(recSidesValid == true)
+		{
+			printf_s("Please enter the points you want 1 at a time, in this format(x y):\n");
+			if (scanf_s("%d %d", &points[i].x, &points[i].y) == 2) {
+				break;
+			}
+
+			else {
+				printf("Invalid input! Please try again using the format (x y)\n");
+				while (getchar() != '\n');
+			}
+		}
 	}
 }
