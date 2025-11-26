@@ -26,19 +26,17 @@ int main() {
 
 		case 2:
 			printf_s("Rectangle selected.\n");
-			int rectangleSides[4] = { 0, 0, 0, 0 };
-			int* rectangleSidePtr = getrectangleSides(rectangleSides);
-
-			//Check names of parameter
-			char* resultRec = analyzeTriangle(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
-			printf("%s\n", resultRec);
+			Point rectanglePoint[4];
+			getrectangleSides(rectanglePoint);
+			for (int i = 0; i < 4; i++) {
+				printf("Side %d is: [%d, %d]", i + 1, rectanglePoint[i].x, rectanglePoint[i].y);
+			}
 			break;
-
-
 
 		case 0:
 			continueProgram = false;
 			break;
+
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
@@ -77,11 +75,9 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-int* getrectangleSides(int* rectangleSides) {
-	printf_s("Enter the four sides of the rectangle: ");
-	for (int i = 0; i < 4; i++)
-	{
-		scanf_s("%d", &rectangleSides[i]);
+void getrectangleSides(Point points[4]) {
+	for (int i = 0; i < 4; i++) {
+		printf_s("Please enter the points you want 1 at a time, in this format(x y):\n");
+		scanf_s("%d %d", &points[i].x, &points[i].y);
 	}
-	return rectangleSides;
 }
