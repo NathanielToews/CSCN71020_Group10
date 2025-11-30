@@ -10,23 +10,6 @@ double pointConnect(double array[4][2]) {
 	// array[point #][x or y]
 	// array[0][1] = point 1y
 
-	// gets user inputs for all points
-	/*printf("Please input 4 points in an 'x' then 'y' order:");
-	for (int i = 0; i < 4; i++) {
-
-		for (int x = 0; x < 2; i++) {
-
-			if (x == 0) {
-				printf("Point %d x:", i + 1);
-			}
-			else {
-				printf("Point %d y:", i + 1);
-			}
-			scanf_s("%lf", &array[i][x]);
-				
-		}
-	}*/
-
 	// sides length solve
 	double s1, s2, s3, s4;
 	s1 = sqrt(pow(array[0][0] - array[1][0], 2) + pow(array[0][1] - array[1][1], 2));

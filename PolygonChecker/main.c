@@ -26,10 +26,10 @@ int main() {
 
 		case 2:
 			printf_s("Rectangle selected.\n");
-			Point rectanglePoint[4];
+			double rectanglePoint[4][2];
 			getrectangleSides(rectanglePoint);
 			for (int i = 0; i < 4; i++) {
-				printf("Side %d is: [%d, %d]", i + 1, rectanglePoint[i].x, rectanglePoint[i].y);
+				printf("Side %d is: [%d, %d] ", i + 1, rectanglePoint[i][0], rectanglePoint[i][1]);
 			}
 			break;
 
@@ -75,14 +75,14 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-void getrectangleSides(Point points[4]) {
+void getrectangleSides(double points[4][2]) {
 
 	bool recSidesValid = true;
 	for (int i = 0; i < 4; i++) {
 		while(recSidesValid == true)
 		{
 			printf_s("Please enter the points you want 1 at a time, in this format(x y):\n");
-			if (scanf_s("%d %d", &points[i].x, &points[i].y) == 2) {
+			if (scanf_s("%d %d", &points[i][0], &points[i][1]) == 2) {
 				break;
 			}
 
