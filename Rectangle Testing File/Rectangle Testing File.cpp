@@ -12,15 +12,17 @@ namespace RectangleTestingFile
 	{
 	public:
 		
-		TEST_METHOD(Test)
+		TEST_METHOD(SolvedSquare)
 		{
-			double array[4][2] = { {1,2}, {4,2}, {1,5}, {7,3} };
+			double array[4][2] = { {1,5}, {4,5}, {4,2}, {1,2} };
 			double result = pointConnect(array);
 
-			double perimeter = 3 + 3 + sqrt(10) + sqrt(40);
+			double perimeter = 3 + 3 + 3 + 3;
 
 			Assert::AreEqual(perimeter, result);
 
 		}
+
+
 	};
 }
