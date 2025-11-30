@@ -8,7 +8,7 @@
 
 char* analyzeTriangle(double a, double b, double c) {
 	char* result = "";
-	if (a <= 0 || b <= 0 || c <= 0) {
+	if (a <= 0 || b <= 0 || c <= 0) || a + b < c || a + c < b || b + c < a) {
 		result = "Not a triangle";
 	}
 	else if (a == b && a == c) {
@@ -42,6 +42,7 @@ void triangleAngles(double a, double b, double c) {
 	angleStore[2] = C;
 
 	printf("Your angles are: %.2f°, %.2f°, and %.2f°\n", angleStore[0], angleStore[1], angleStore[2]);
+
 
 
 }
