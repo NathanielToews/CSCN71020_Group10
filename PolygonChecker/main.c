@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "rectangleSolver.h"
 
 int side = 0;
 
@@ -31,6 +32,8 @@ int main() {
 			for (int i = 0; i < 4; i++) {
 				printf("Side %d is: [%lf, %lf] ", i + 1, rectanglePoint[i][0], rectanglePoint[i][1]);
 			}
+			printf("\n");
+			double perimater = pointConnect(rectanglePoint);
 			break;
 
 		case 0:
