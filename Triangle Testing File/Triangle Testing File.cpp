@@ -26,6 +26,26 @@ namespace TriangleTestingFile
 			Assert::AreEqual(60.0, angles[1], 0.001);
 			Assert::AreEqual(60.0, angles[2], 0.001);
 		}
+
+		TEST_METHOD(Isosceles)
+		{
+			double angles[3];
+			triangleAngles(5, 3, 5, angles);
+
+			Assert::AreEqual(72.542, angles[0], 0.001);
+			Assert::AreEqual(34.915, angles[1], 0.001);
+			Assert::AreEqual(72.542, angles[2], 0.001);
+		}
+
+		TEST_METHOD(DifferentSides)
+		{
+			double angles[3];
+			triangleAngles(4, 5, 7, angles);
+
+			Assert::AreEqual(34.048, angles[0], 0.001);
+			Assert::AreEqual(44.415, angles[1], 0.001);
+			Assert::AreEqual(101.537, angles[2], 0.001);
+		}
 	};
 
 
