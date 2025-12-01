@@ -7,6 +7,7 @@
 
 double pointConnect(double array[4][2]) {
 
+	// The array holds the points like show below
 	// array[point #][x or y]
 	// array[0][1] = point 1y
 
@@ -30,10 +31,10 @@ double pointConnect(double array[4][2]) {
 	
 	// checks that all angles are equal to 90 degrees (this has tollernce to make sure that if a double is slightly off it will still work)	
 	if (fabs(angle1 - 90) < 1e-6 && fabs(angle2 - 90) < 1e-6 && fabs(angle3 - 90) < 1e-6 && fabs(angle4 - 90) < 1e-6) {
-		int area = s1 * s2;
-		printf("This is a rectangle and the area is %d", area);
+		double area = fabs(s1 * s2);
+		printf("This is a rectangle and the area is %lf\n", area);
 	}
-	printf("The perimeter is %lf", perimeter);
+	printf("The perimeter is %lf\n", perimeter);
 
 	return perimeter;
 }
