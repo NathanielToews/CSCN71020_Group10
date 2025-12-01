@@ -49,6 +49,29 @@ namespace TriangleTestingFile
 			Assert::AreEqual("Equilateral triangle", result);
 
 		}
+
+		TEST_METHOD(TwoEqualSides)
+		{
+			double a = 30, b = 60, c = 60;
+
+			char* result = analyzeTriangle(a, b, c);
+
+			Assert::AreEqual("Isosceles triangle", result);
+
+		}
+
+		TEST_METHOD(DifferentSides)
+		{
+			double a = 30, b = 40, c = 60;
+
+			char* result = analyzeTriangle(a, b, c);
+
+			Assert::AreEqual("Scalene Triangle", result);
+
+		}
+
 	};
+
+
 
 }

@@ -8,7 +8,7 @@
 
 char* analyzeTriangle(double a, double b, double c) {
 	char* result = "";
-	if (a <= 0 || b <= 0 || c <= 0) || a + b < c || a + c < b || b + c < a) {
+	if (a <= 0 || b <= 0 || c <= 0 || a + b < c || a + c < b || b + c < a) {
 		result = "Not a triangle";
 	}
 	else if (a == b && a == c) {
@@ -16,8 +16,7 @@ char* analyzeTriangle(double a, double b, double c) {
 	}
 	else if ((a == b && a != c) || 
 			 (a == c && a != b) ||
-			 (b == c && b != a))
-	{
+			 (b == c && b != a)) {
 		result = "Isosceles triangle";
 	}
 	else {
