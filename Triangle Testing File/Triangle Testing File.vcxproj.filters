@@ -21,9 +21,15 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\PolygonChecker\triangleSolver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PolygonChecker\triangleSolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

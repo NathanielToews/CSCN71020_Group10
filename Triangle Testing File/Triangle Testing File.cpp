@@ -1,8 +1,9 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+#include <cmath>
 
 extern "C" char* analyzeTriangle(double a, double b, double c);
-extern "C" char* triangleAngles(double side1, double side2, double side3);
+extern "C" void triangleAngles(double side1, double side2, double side3, double angleStore[3]);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -11,15 +12,6 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace TriangleTestingFile
 {
-	TEST_CLASS(TriangleTestingFile)
-	{
-	public:
-
-		TEST_METHOD(TestMethod1)
-		{
-
-		}
-	};
 
 	TEST_CLASS(TriangleAngleTests)
 	{
@@ -27,11 +19,12 @@ namespace TriangleTestingFile
 
 		TEST_METHOD(Equilateral) // testing when triangle sides are equal
 		{
-			double side1 = 1,  side2 = 1,  side3 = 1;
+			double angles[3];
+			triangleAngles(1, 1, 1, angles);
 
-			char* result = triangleAngles(side1, side2, side3);
-
-			Assert::AreEqual("60, 60, 60", result);
+			Assert::AreEqual(60.0, angles[0], 0.001);
+			Assert::AreEqual(60.0, angles[1], 0.001);
+			Assert::AreEqual(60.0, angles[2], 0.001);
 		}
 	};
 
